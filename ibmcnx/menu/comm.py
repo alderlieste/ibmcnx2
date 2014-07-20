@@ -39,12 +39,16 @@ def cnxFilesPolicies():
 
 def cnxLibraryPolicies():
     execfile( 'ibmcnx/cnx/LibraryPolicies.py', globdict )
+	
+def cnxCommunitiesAddMember():
+	execfile( 'ibmcnx/cnx/cnxCommunitiesAddMember.py', globdict )
 
 comm = ibmcnx.menu.MenuClass.cnxMenu()
 comm.AddItem( 'Update VersionStamp (ibmcnx/cnx/VersionStamp.py)', cnxFilesVersionStamp )
 comm.AddItem( 'Work with Files Policies (ibmcnx/cnx/FilesPolicies.py)', cnxFilesPolicies )
 comm.AddItem( 'Work with Libraries (ibmcnx/cnx/LibraryPolicies.py)', cnxLibraryPolicies )
 comm.AddItem( 'Reparent/Move Communities (ibmcnx/cnx/CommunitiesReparenting.py)', cnxCommunitiesReparenting )
+comm.AddItem( 'Add member to Community (ibmcnx/cnx/cnxCommunitiesAddMember.py)', cnxCommunitiesAddMember )
 comm.AddItem( 'Back to Main Menu (ibmcnx/menu/cnxmenu.py)', ibmcnx.functions.cnxBackToMainMenu )
 comm.AddItem( "Exit", ibmcnx.functions.bye )
 
